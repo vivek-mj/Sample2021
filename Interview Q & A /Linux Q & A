@@ -1,0 +1,119 @@
+What is Linux?
+LINUX is the standard kernal based operating system for server and baremetal
+What is INODE in Linux like Operating systems?
+Its Unique Identification Code for files and directories in linux like operating system file structure
+What are commands used for Zip and Unzip files in Linux server?
+1. gzip = Compress File 2. gunzip = Uncompress File will use for Linux operating system
+What is file path of Alias name set byPermanent?
+/etc/bashrc
+What is MBR in linux?
+MBR is a Master Boot Recorder, it uses for booting operating system
+What are 2 Types of Mount in linux?
+Temporary Mount and Permanent Mount
+Temporary Mount for removable devices such as pendrive, cd/dvd or any other.
+permanent Mounnting like harddrives, lun storage etc, it will remain connected on Linux system every boot or restart
+What is SWAP in Linux?
+Linux uses swap space to increase the amount of virtual memory available to a host. It can use one or more dedicated swap partitions or a swap file on a regular filesystem or logical volume.
+What command use for Error checking and Error Fixing in Linux?
+$ fsck and e2fsck
+What is PV, VG, and LVM in Linux?
+PV = Physical Volume VG = Volume Group LVM = Logical Volume .
+Q. What is LVM in Linux Distributions
+A. LVM is used to create logical partitions and during run time we can resize particular partition without data loss. Empty partitions only can do LVM creation.
+Q. What are common commands used for Physical Volume creation?
+A. pvcreate
+pvs
+pvdisplay
+Q. What command is used for create Volume Group?
+A. vgcreate
+vgs
+Q. What is Syntax for LVM Create?
+A. #lvcreate -L partitionsize -n userdefinename volumegroupname
+Q. What types of package Installation in REDHAT?
+A. RPM = Redhat Package Manager YUM = Yellow Dog Updated Modifier
+Q. Tell me Linux Boot Sequence Flow?
+A. BIOS → MBR → Boot Loader /GRUB→ Kernal → Runlevel.
+Q. Types of Zone in DNS?
+A. Forward lookup zone Reverse lookup zone
+Q. Explain inbuilt firewalls in Linux?
+A. IP Tables - Selinux - TCPwrappers.
+Q. What command to Execute disable IPTables permanently in Linux?
+A. #iptables -F Service iptables save.
+Q. What is SELinux in Linux Distributions?
+A. Its one type of firewall in Linux To block particular service in a Protocol
+Q. Tell me File path of SELinux?
+A. #vi /etc/selinux/config
+Q. What is command to check selinux status ?
+A. getenforce
+Q. What is LDAP?
+A. The Lightweight Directory Access Protocol (LDAP) is a set of open protocols used to access centrally stored information over a network.
+Q. Which Configuration File Is Required For Ldap Clients?
+A. Ldap.conf.
+Q. What Is The Name Of Main Configuration File Name For Ldap Server?
+A. Slapd.conf
+Q. What is the difference between TOP and PS command?
+A. Top command gives the dynamic view of the processes are running in the server and generally the dynamic change happens in every 3 second. Whereas PS commands gives the static view of the processes.
+Q. Location of Cron file in #linux?
+A. /var/spool/cron
+Q. What is command to see Particular user Schedule Jobs?
+A. $crontab -lu username
+Q. What is command for restart cron service?
+A. $ service crond restart
+Q. What is command for FTP service on and restart?
+A. $chkconfig vsftpd on
+$service vsftpd restart
+Devops:
+Q. What is Kernel on Ubuntu / Unix Operating system like Linux?
+A. Kernel is the heart of operating system. It interacts with shell and executes the machine level language.
+Q. How can I save my input and output commands and see them when required in Linux?
+A. At the beginning of the session if I will use SCRIPT command then the details of the input and output commands will be saved in a file called typescript and we can view it any time using “cat typescript” command.
+Q. How can I check which processes are running in my Linux machine?
+A. To check process which are running in machine, use two commands.
+(a) TOP and (b) PS
+Q. You used TOP command and without aborting the TOP process I need to kill one process. Is it possible to kill ??
+A. Yes TOP command it self has a command prompt. Type K then it will ask you for the PID of the process to kill. Hit the PID and enter, it will kill the process.
+Q. What is a shell inredhat Linux?
+A. Description of shell is huge, However commonly we explain it as the interpreter between the user and the machine
+Q. What is absolute path and relative path in Unix / redhat Linux ?
+A. Absolute path refers to the path starting from the root directory and the path continues with a sequence starting from root(#).
+Whereas relative path is the current path.
+Q. How can I check the system IP in redhat Linux ?
+A. type hostname command or else you can use #ifconfig to know the all IP Addresses of the Machine usaully eth0 is the by default first Lan port ip in Many Linux distributions.
+Q. How can I check if a server is up and running or not ?
+A. you can use ping –t command to check.
+$ping –t or .
+Q. What is FIFO and LIFO in Linux / Unix ?
+A. FIFO is first in first out
+and
+LIFO is last in first out..
+Q. What is PATH variable in Linux / Unix?
+A. PATH is an environmental variable which contains the path of the command files for execution at runtime and we can change the paths inside the PATH variable.
+Q. How can I kill a process in Linux / Unix?
+A. first use $PS –ef command and get the PID of the process you want to kill.
+Then use kill -9 command to kill the process.
+Its very important question for Troubleshooting.
+Q. How to check disk utilization of a linux server?
+A. Use du command to check the disk utilization.
+$du
+in advance you want to see a specify partition with all the information use $df -hT to know clear details about connected harddisk information with available space as well used space..
+Q. How to Enable / Disable Ethernet Device on your Linux?
+A. Open and Edit this file
+#vi /etc/sysconfig/network-scripts/devicename
+For enable ONBOOT = yes
+For disable ONBOOT =no
+Q. What is command to change Hostname without System Restart?
+A. hostname TipLinux interview questions Linux8 Operating system Recently acquired by IBM
+Q. What is File Path of Network Configuration?
+A. $ /etc/sysconfig/network-scripts.
+Q. What is File Path of DNS Configuration file stores in Linux?
+A. $ /etc/resolv.conf
+Q. How to Update locate DB ?
+A. $ cd/var/lib/mlocate
+$ updatedb
+Q. What is command to restart MySql ?
+A. $systemctl restart mysqld
+Q. Tell me any two web server in Linux Supports? A. 1. Apache Webserver for Plain HTML and PHP Applications
+2. Apache-Tomcat for Java Base Libraries User Web Applciation In Linux Distributions
+
+https://drive.google.com/file/d/1yzZ3Ev-j1iMVNQohB51MnTAiSnid84xV/view
+https://drive.google.com/file/d/1BA9R1gO_6-ec47tpSg2prgiJPAE4Bi15/view
