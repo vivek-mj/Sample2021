@@ -14,6 +14,7 @@
           state: started
 
 ------------------------------------------------------
+Reference Link: https://www.middlewareinventory.com/blog/ansible-playbook-example/
 name Name of the playbook
 
 hosts A set of hosts usually grouped together as a host group and defined in inventory file
