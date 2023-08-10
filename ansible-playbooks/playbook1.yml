@@ -1,0 +1,27 @@
+---
+  - name: Playbook
+    hosts: webservers
+    become: yes
+    become_user: root
+    tasks:
+      - name: ensure apache is at the latest version
+        yum:
+          name: httpd
+          state: latest
+      - name: ensure apache is running
+        service:
+          name: httpd
+          state: started
+
+------------------------------------------------------
+name Name of the playbook
+
+hosts A set of hosts usually grouped together as a host group and defined in inventory file
+
+become To tell ansible this play has to be executed with elevated privileges
+
+become_user the user name that we want to switch to like compare it with sudo su - user
+
+tasks set of tasks to execute, All tasks would be defined below this
+
+and then we have two tasks with two modules, the first module is yum and the second module is service
