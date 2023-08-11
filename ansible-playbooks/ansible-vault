@@ -1,0 +1,33 @@
+ansible-vault create vault-pass.yml
+ansible-vault view vault-pass.yml
+ansible-vault edit vault-pass.yml
+ansible-vault encrypt vault-pass.yml
+ansible-vault decrypt vault-pass.yml
+---------------------------------------------------
+vi vault-pass.yml
+password: ansible123   --> git password
+--------------------------------------------------------------
+private git repo : https://username:password@githubrepuURL
+--------------------------------------------------------------
+playbook: vi ansible-vault.yml
+
+---
+- name: Ansible playbook to test ansible vault
+  hosts: all
+  become: yes
+  vars_files:
+   - vault-pass.yml
+  tasks:
+   - name: clone a repo
+     git:
+        repo: https://username:{{ password }}@github.com/reponame
+        dest: /opt/ansadmin/test-vault
+--------------------------------------------------------------------------
+ansible-playbook -i hosts ansible-vault.yml --ask-vault-pass 
+( Here, we are passing password from an ecrypted file, so we need to pass that password by using --ask-vault-pass. Without --ask-vault-pass it cannot open the enrypted file )
+(o/p: Vault password: it asks for the password of the encrypted file)
+Now we can keep the password of vault-pass.yml in a separate file. let that file be pass.yml
+vi pass.yml
+abc123 (content/password inside pass.yml)
+ansible-playbook -i hosts ansible-vault.yml --vault-password-file pass.yml 
+(While executing playbook, instead of providing password, we can just give the password file i.e, --vault-password-file followed by filename)
