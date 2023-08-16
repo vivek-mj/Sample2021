@@ -1,0 +1,27 @@
+yum install docker -y
+docker --version
+systemctl start docker
+docker info (running or not)
+docker stats (to check cpu usage, memory usage etc)
+docker run -dit ubuntu (creates ubuntu container)
+docker exec -it containerid /bin/bash (to login in to container and when exited container will be in running state)
+docker attach container id ( to login to container but when exited the container will also be in exited (0) state i.e., in stopped state )
+docker stop conatinerid ( to stop container. when we stop the container manually the exit code is 127 ) 
+docker pause containerid
+docker unpause containerid
+docker diff containerid ( to check the changes , added or deleted or changed files from outside without entering into the container )
+docker commit containerid ( to create image from the existing container. the changes done in that container will be imported directly to the new image which we create. We can check in the container which is creatd from that new image)
+Eg: docker commit containerid  nvivek007/testimage:version3
+**Commit a container with new configurations (--change) -- Example below **
+docker inspect -f "{{ .Config.Env }}" containerid
+docker commit --change "ENV DEBUG=true" containerid  svendowideit/testimage:version3
+docker inspect -f "{{ .Config.Env }}" newimageid
+**Commit a container with new CMD and EXPOSE instructions **
+docker commit --change='CMD ["apachectl", "-DFOREGROUND"]' -c "EXPOSE 80" containerid  svendowideit/testimage:version4
+docker run -d svendowideit/testimage:version4
+docker ps
+** For Reference: https://docs.docker.com/engine/reference/commandline/commit/
+docker pull httpd
+docker stop $(docker ps -a -q) --> to stop all running containers
+docker rm $(docker ps -aq) --> to delete/remove all stopped containers
+docker rmi -f $(docker images -q) --> to delete all images
