@@ -1,15 +1,7 @@
-pipeline {
-    agent none
-    stages {
-        stage('Example') {
-            agent any
-            options {
-                // Timeout counter starts BEFORE agent is allocated
-                timeout(time: 1, unit: 'SECONDS')
-            }
-            steps {
-                echo 'Hello World'
-            }
-        }
+agent {
+    docker {
+        image 'maven:3.9.3-eclipse-temurin-17'
+        label 'my-defined-label'
+        args  '-v /tmp:/tmp'
     }
 }
