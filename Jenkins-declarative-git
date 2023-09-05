@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        user = 'vvk'
+        PATH = "/opt/maven/bin:$PATH"
     }
     stages {
         stage('SCM') {
@@ -10,21 +10,10 @@ pipeline {
             }
         }
         stage('Build') {
-            environment {
-                app = 'calculator'
-            }
             steps {
-                echo "Building the code"
-                echo "the app is ${app}"
-                echo "User is ${user}"
+                sh "clean package"
             }
         }
-        stage('Deploy') {
-            steps {
-                echo "Deploying the code"
-                echo "User is ${user}"
-                
-            }
-        }
+        
     }
 }
